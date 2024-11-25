@@ -4,24 +4,18 @@ import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import galleryImages from "@/public/gallery"
 
-const images = [
-  { src: "/gallery-image-1.jpg", alt: "Gallery Image 1" },
-  { src: "/gallery-image-2.jpg", alt: "Gallery Image 2" },
-  { src: "/gallery-image-3.jpg", alt: "Gallery Image 3" },
-  { src: "/gallery-image-4.jpg", alt: "Gallery Image 4" },
-  { src: "/gallery-image-5.jpg", alt: "Gallery Image 5" },
-]
 
 export default function ImageGallery() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextImage = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % galleryImages.length)
   }, [])
 
   const prevImage = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + galleryImages.length) % galleryImages.length)
   }, [])
 
   useEffect(() => {
@@ -54,12 +48,12 @@ export default function ImageGallery() {
               className="relative h-full w-full"
             >
               <Image
-                src={images[currentIndex].src}
-                alt={images[currentIndex].alt}
+                src={galleryImages[currentIndex].src}
+                alt={galleryImages[currentIndex].alt}
                 fill
                 className="object-cover"
                 onError={(e) => {
-                  console.error(`Failed to load image: ${images[currentIndex].src}`)
+                  console.error(`Failed to load image: ${galleryImages[currentIndex].src}`)
                   e.currentTarget.src = "/placeholder.svg"
                 }}
               />
@@ -85,7 +79,7 @@ export default function ImageGallery() {
           </motion.button>
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
             <div className="flex space-x-2">
-              {images.map((_, index) => (
+              {galleryImages.map((_, index) => (
                 <motion.button
                   key={index}
                   onClick={() => setCurrentIndex(index)}

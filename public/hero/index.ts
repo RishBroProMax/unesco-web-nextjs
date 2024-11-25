@@ -1,6 +1,6 @@
-import one from "./1.png";
-import two from "./2.png";
-import three from "./3.png";
-import four from "./4.png";
+import one from "./1.jpg";
+import two from "./2.jpg";
+import three from "./3.jpg";
+import four from "./4.jpg";
 
 export { one, two, three, four };
