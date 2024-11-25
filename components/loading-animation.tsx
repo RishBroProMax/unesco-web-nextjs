@@ -30,7 +30,7 @@ export function LoadingAnimation() {
           }}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-bold text-white"
         >
-          UNESCO
+          
         </motion.div>
       </div>
     </div>
