@@ -10,19 +10,19 @@ const headMasters = [
     name: "Ms.Kalumi Gunathilaka",
     role: "Vice Principal",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/placeholder.svg",
   },
   {
     name: "Ms.G.G.Dulani Kamal Renuka",
     role: "Principal",
     description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/placeholder.svg",
   },
   {
     name: "Ms.Poornima Dilani",
     role: "Teacher In Charge",
     description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/placeholder.svg",
   },
 ]
 

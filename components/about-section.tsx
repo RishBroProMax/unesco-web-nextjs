@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import { one, two } from "@/public/about"
 
 export default function AboutSection() {
   const [ref, inView] = useInView({
@@ -29,7 +30,7 @@ export default function AboutSection() {
             className="overflow-hidden rounded-3xl shadow-lg"
           >
             <Image
-              src="/coastal-view.jpg"
+              src={one}
               alt="Coastal view"
               width={400}
               height={300}
@@ -62,7 +63,7 @@ export default function AboutSection() {
             className="overflow-hidden rounded-3xl shadow-lg"
           >
             <Image
-              src="/train-bridge.jpg"
+              src={two}
               alt="Train on bridge"
               width={400}
               height={300}

@@ -41,7 +41,6 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       {/* test image */}
-      <Image src={"/111.png"} alt="test image" width={500} height={200} />
       <Suspense fallback={<LoadingAnimation />}>
         <AboutSection />
       </Suspense>

@@ -1,33 +1,30 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { Mail, Facebook, Youtube, Instagram } from 'lucide-react'
-import { motion, AnimatePresence } from "framer-motion"
-import { NavBar } from "./nav-bar"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { Mail, Facebook, Youtube, Instagram } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { NavBar } from "./nav-bar";
+import Link from "next/link";
+import { four, one, three, two } from "@/public/hero";
 
-const backgroundImages = [
-  "@/public/bg.jpg",
-  "@/public/bg1.jpg",
-  "@/public/bg2.jpg",
-]
+const backgroundImages = [one, two, three, four];
 
 export function HeroSection() {
-  const [currentImage, setCurrentImage] = useState(0)
+  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % backgroundImages.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
+      setCurrentImage((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <AnimatePresence initial={false}>
         <motion.div
-          key={backgroundImages[currentImage]}
+          key={currentImage}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -90,17 +87,41 @@ export function HeroSection() {
           transition={{ delay: 0.4 }}
           className="mt-8 flex space-x-6"
         >
-          <SocialIcon href="#contact" icon={<Mail className="h-6 w-6" />} label="Email" />
-          <SocialIcon href="#" icon={<Facebook className="h-6 w-6" />} label="Facebook" />
-          <SocialIcon href="#" icon={<Youtube className="h-6 w-6" />} label="YouTube" />
-          <SocialIcon href="#" icon={<Instagram className="h-6 w-6" />} label="Instagram" />
+          <SocialIcon
+            href="#contact"
+            icon={<Mail className="h-6 w-6" />}
+            label="Email"
+          />
+          <SocialIcon
+            href="#"
+            icon={<Facebook className="h-6 w-6" />}
+            label="Facebook"
+          />
+          <SocialIcon
+            href="#"
+            icon={<Youtube className="h-6 w-6" />}
+            label="YouTube"
+          />
+          <SocialIcon
+            href="#"
+            icon={<Instagram className="h-6 w-6" />}
+            label="Instagram"
+          />
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
 
-function SocialIcon({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
+function SocialIcon({
+  href,
+  icon,
+  label,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}) {
   return (
     <Link href={href} className="group relative">
       <motion.span
@@ -119,6 +140,5 @@ function SocialIcon({ href, icon, label }: { href: string; icon: React.ReactNode
         {icon}
       </motion.div>
     </Link>
-  )
+  );
 }
-

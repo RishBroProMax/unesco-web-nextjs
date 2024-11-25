@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, Menu, X } from 'lucide-react'
-
+import logo from "@/public/logo.png"
 const menuItems = [
   { name: "Home", href: "#" },
   { name: "About", href: "#about" },
@@ -88,7 +88,7 @@ export function NavBar() {
           >
             <div className="relative h-12 w-12 overflow-hidden rounded-full bg-white/10 p-2 transition-transform hover:scale-110">
               <Image
-                src="/placeholder.svg?height=100&width=100"
+                src={logo}
                 alt="UNESCO Logo"
                 fill
                 className="object-contain p-1"
