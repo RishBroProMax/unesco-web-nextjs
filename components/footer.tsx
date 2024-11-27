@@ -5,9 +5,9 @@ import { Mail, Facebook, Youtube, Instagram, Phone, MapPin } from 'lucide-react'
 import { motion } from "framer-motion"
 
 const socialLinks = [
-  { name: "Email", href: "#", icon: Mail },
+  { name: "Email", href: "unescosocietymrcm@gmail.com", icon: Mail },
   { name: "Facebook", href: "#", icon: Facebook },
-  { name: "YouTube", href: "#", icon: Youtube },
+  { name: "YouTube", href: "https://www.youtube.com/@UNESCOSocietyMRCM", icon: Youtube },
   { name: "Instagram", href: "#", icon: Instagram },
 ]
 
