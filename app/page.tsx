@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/hero-section";
 import { LoadingAnimation } from "@/components/loading-animation";
 import Image from "next/image";
 
+// Dynamic imports with fallbacks
 const AboutSection = dynamic(() => import("@/components/about-section"), {
   loading: () => <LoadingAnimation />,
 });
@@ -26,23 +27,32 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    console.log("Initializing website security measures...");
+
     // Disable right-click
     const disableRightClick = (e: MouseEvent) => {
       e.preventDefault();
+      console.warn("Right-click is disabled on this website.");
     };
 
     // Disable developer shortcuts
     const disableShortcuts = (e: KeyboardEvent) => {
-      if (
-        e.key === "F12" || // Open DevTools
-        (e.ctrlKey && e.shiftKey && e.key === "I") || // Inspect Element
-        (e.ctrlKey && e.shiftKey && e.key === "J") || // Console
-        (e.ctrlKey && e.key === "U") // View Source
-      ) {
+      const devToolsKeys = [
+        { ctrlKey: true, shiftKey: true, key: "I" },
+        { ctrlKey: true, shiftKey: true, key: "J" },
+        { ctrlKey: true, key: "U" },
+        { key: "F12" },
+      ];
+      const isDevToolsKey = devToolsKeys.some(
+        (key) =>
+          e.ctrlKey === key.ctrlKey &&
+          e.shiftKey === key.shiftKey &&
+          e.key === key.key
+      );
+
+      if (isDevToolsKey) {
         e.preventDefault();
-        alert(
-          "Developer tools are disabled on this page. Contact Website Developer in Footer"
-        );
+        console.error("Blocked attempt to open developer tools.");
       }
     };
 
@@ -50,22 +60,30 @@ export default function Home() {
     document.addEventListener("contextmenu", disableRightClick);
     document.addEventListener("keydown", disableShortcuts);
 
+    console.log("Security measures applied: Developer tools and right-click disabled.");
+
     return () => {
-      // Cleanup event listeners
+      console.log("Cleaning up security event listeners...");
       document.removeEventListener("contextmenu", disableRightClick);
       document.removeEventListener("keydown", disableShortcuts);
     };
   }, []);
 
   useEffect(() => {
+    console.log("Setting loading screen timer...");
     const timer = setTimeout(() => {
+      console.log("Loading complete. Rendering website.");
       setIsLoading(false);
     }, 2000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      console.log("Clearing loading screen timer...");
+      clearTimeout(timer);
+    };
   }, []);
 
   if (isLoading) {
+    console.log("Displaying loading animation...");
     return <LoadingAnimation />;
   }
 
@@ -76,18 +94,23 @@ export default function Home() {
         scrollBehavior: "smooth", // Enable smooth scrolling
       }}
     >
+      {console.log("Rendering main website components...")}
       <HeroSection />
       <Suspense fallback={<LoadingAnimation />}>
         <AboutSection />
+        {console.log("About Section loaded.")}
       </Suspense>
       <Suspense fallback={<LoadingAnimation />}>
         <HeadMastersSection />
+        {console.log("HeadMasters Section loaded.")}
       </Suspense>
       <Suspense fallback={<LoadingAnimation />}>
         <ImageGallery />
+        {console.log("Image Gallery loaded.")}
       </Suspense>
       <Suspense fallback={<LoadingAnimation />}>
         <Footer />
+        {console.log("Footer loaded.")}
       </Suspense>
     </main>
   );
