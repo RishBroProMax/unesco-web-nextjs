@@ -94,7 +94,7 @@ export function NavBar() {
                 className="object-contain p-1"
               />
             </div>
-            <span className="text-2xl font-bold text-white">UNESCO Society</span>
+            <span className="text-2xl font-bold text-white">MRCM UNESCO Society</span>
           </motion.div>
 
           {/* Desktop Menu */}

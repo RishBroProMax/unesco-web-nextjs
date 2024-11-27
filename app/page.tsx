@@ -26,6 +26,36 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Disable right-click
+    const disableRightClick = (e: MouseEvent) => {
+      e.preventDefault();
+    };
+
+    // Disable developer shortcuts
+    const disableShortcuts = (e: KeyboardEvent) => {
+      if (
+        e.key === "F12" || // Open DevTools
+        (e.ctrlKey && e.shiftKey && e.key === "I") || // Inspect Element
+        (e.ctrlKey && e.shiftKey && e.key === "J") || // Console
+        (e.ctrlKey && e.key === "U") // View Source
+      ) {
+        e.preventDefault();
+        alert("Developer tools are disabled on this page.");
+      }
+    };
+
+    // Add event listeners
+    document.addEventListener("contextmenu", disableRightClick);
+    document.addEventListener("keydown", disableShortcuts);
+
+    return () => {
+      // Cleanup event listeners
+      document.removeEventListener("contextmenu", disableRightClick);
+      document.removeEventListener("keydown", disableShortcuts);
+    };
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);

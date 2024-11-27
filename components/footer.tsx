@@ -8,7 +8,7 @@ const socialLinks = [
   { name: "Email", href: "unescosocietymrcm@gmail.com", icon: Mail },
   { name: "Facebook", href: "#", icon: Facebook },
   { name: "YouTube", href: "https://www.youtube.com/@UNESCOSocietyMRCM", icon: Youtube },
-  { name: "Instagram", href: "#", icon: Instagram },
+  { name: "Instagram", href: "https://www.instagram.com/mrcm.unesco.society/", icon: Instagram },
 ]
 
 const quickLinks = [
@@ -94,7 +94,7 @@ export default function Footer() {
               className="mb-2 flex items-center"
             >
               <Phone className="mr-2 h-5 w-5" />
-              +94 123 456 789
+              +94 71 053 5573
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export default function Footer() {
               className="mb-2 flex items-center"
             >
               <Mail className="mr-2 h-5 w-5" />
-              info@unescosociety.com
+              unescosocietymrcm@gmail.com
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ export default function Footer() {
               className="flex items-center"
             >
               <MapPin className="mr-2 h-5 w-5" />
-              Matara, Sri Lanka
+              Sarasavi Uyana,Matara, Sri Lanka
             </motion.p>
           </address>
         </div>
