@@ -6,9 +6,9 @@ import { Mail, Facebook, Youtube, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavBar } from "./nav-bar";
 import Link from "next/link";
-import { one, three, two, four } from "@/public/hero";
+import { one, three, two, four, five } from "@/public/hero";
 
-const backgroundImages = [one, two, three, four];
+const backgroundImages = [one, two, three, four, five];
 
 export function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
