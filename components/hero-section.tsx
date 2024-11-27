@@ -6,7 +6,7 @@ import { Mail, Facebook, Youtube, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavBar } from "./nav-bar";
 import Link from "next/link";
-import { four, one, three, two } from "@/public/hero";
+import { one, three, two } from "@/public/hero";
 
 const backgroundImages = [one, two, three, four];
 
