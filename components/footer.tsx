@@ -123,7 +123,7 @@ export default function Footer() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="mt-8 border-t border-gray-800 pt-8 text-center"
       >
-        <p>&copy; 2024 UNESCO Society - Mahinda Rajapaksha College Matara. All rights reserved.</p>
+        <p>&copy; 2024 <a href="https://rishbropromax.github.io" target="_blank">Rish Studio</a> & <a href="https://github.com/darkwaves-ofc" target="_blank">Dark Waves</a> - Mahinda Rajapaksha College Matara. All rights reserved.</p>
       </motion.div>
     </footer>
   )
