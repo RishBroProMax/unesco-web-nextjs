@@ -98,12 +98,12 @@ export function HeroSection() {
             label="Facebook"
           />
           <SocialIcon
-            href="#"
+            href="https://www.youtube.com/@UNESCOSocietyMRCM"
             icon={<Youtube className="h-6 w-6" />}
             label="YouTube"
           />
           <SocialIcon
-            href="#"
+            href="https://www.instagram.com/mrcm.unesco.society/"
             icon={<Instagram className="h-6 w-6" />}
             label="Instagram"
           />
