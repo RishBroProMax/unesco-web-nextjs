@@ -8,19 +8,19 @@ import Image from "next/image"
 const headMasters = [
   
   {
-    name: "Ms.Dulani Kamal Renuka",
+    name: "Mrs.Dulani Kamal Renuka",
     role: "Principal",
     description: "With years of experience in educational leadership, Ms. Dulani Kamal Renuka is the cornerstone of our school's success. Her passion for education and unwavering dedication to nurturing young minds make her a respected and visionary leader",
     image: "/masters/princi.jpeg",
   },
   {
-    name: "Ms.Kelumi Gunathilaka",
+    name: "Mrs.Kelumi Gunathilaka",
     role: "Vice Principal",
     description: "A dedicated and inspiring leader, Ms. Kalumi Gunathilaka excels in fostering academic excellence and ensuring a supportive environment for both students and staff. Her strategic vision and commitment to innovation drive the school towards success",
     image: "/masters/kelumi.jpeg",
   },
   {
-    name: "Ms.Poornima Dilani",
+    name: "Mrs.Poornima Dilani",
     role: "Teacher In Charge",
     description: "An exceptional educator, Ms. Poornima Dilani is known for her ability to connect with students and inspire them to achieve their full potential. Her tireless efforts in managing and coordinating school activities set her apart as a pillar of our institution.",
     image: "/masters/Teacher.jpeg",
