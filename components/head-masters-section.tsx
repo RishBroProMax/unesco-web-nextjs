@@ -23,7 +23,7 @@ const headMasters = [
     name: "Ms.Poornima Dilani",
     role: "Teacher In Charge",
     description: "An exceptional educator, Ms. Poornima Dilani is known for her ability to connect with students and inspire them to achieve their full potential. Her tireless efforts in managing and coordinating school activities set her apart as a pillar of our institution.",
-    image: "/placeholder.svg",
+    image: "/masters/Teacher.jpeg",
   },
 ]
 
