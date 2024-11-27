@@ -11,7 +11,7 @@ const menuItems = [
   { name: "About", href: "#about" },
   { name: "Head Masters", href: "#head-masters" },
   { name: "Gallery", href: "#gallery" },
-  { name: "Footer", href: "#contact" },
+  { name: "Contact", href: "#contact" },
 ]
 
 export function NavBar() {
