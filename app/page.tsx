@@ -40,7 +40,9 @@ export default function Home() {
         (e.ctrlKey && e.key === "U") // View Source
       ) {
         e.preventDefault();
-        alert("Developer tools are disabled on this page.");
+        alert(
+          "Developer tools are disabled on this page. Contact Website Developer in Footer"
+        );
       }
     };
 
@@ -68,9 +70,13 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen">
+    <main
+      className="min-h-screen"
+      style={{
+        scrollBehavior: "smooth", // Enable smooth scrolling
+      }}
+    >
       <HeroSection />
-      {/* test image */}
       <Suspense fallback={<LoadingAnimation />}>
         <AboutSection />
       </Suspense>
