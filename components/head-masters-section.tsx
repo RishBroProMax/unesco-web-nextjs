@@ -9,19 +9,19 @@ const headMasters = [
   {
     name: "Ms.Kalumi Gunathilaka",
     role: "Vice Principal",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: "A dedicated and inspiring leader, Ms. Kalumi Gunathilaka excels in fostering academic excellence and ensuring a supportive environment for both students and staff. Her strategic vision and commitment to innovation drive the school towards success",
     image: "/placeholder.svg",
   },
   {
-    name: "Ms.G.G.Dulani Kamal Renuka",
+    name: "Ms.Dulani Kamal Renuka",
     role: "Principal",
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    description: "With years of experience in educational leadership, Ms. Dulani Kamal Renuka is the cornerstone of our school's success. Her passion for education and unwavering dedication to nurturing young minds make her a respected and visionary leader",
     image: "/placeholder.svg",
   },
   {
     name: "Ms.Poornima Dilani",
     role: "Teacher In Charge",
-    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    description: "An exceptional educator, Ms. Poornima Dilani is known for her ability to connect with students and inspire them to achieve their full potential. Her tireless efforts in managing and coordinating school activities set her apart as a pillar of our institution.",
     image: "/placeholder.svg",
   },
 ]
