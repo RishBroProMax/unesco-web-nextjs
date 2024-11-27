@@ -3,12 +3,12 @@
 import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import galleryImages from "@/public/gallery"
-
 
 export default function ImageGallery() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isFullscreen, setIsFullscreen] = useState(false)
 
   const nextImage = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % galleryImages.length)
@@ -18,18 +18,28 @@ export default function ImageGallery() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + galleryImages.length) % galleryImages.length)
   }, [])
 
+  const openFullscreen = useCallback(() => {
+    setIsFullscreen(true)
+  }, [])
+
+  const closeFullscreen = useCallback(() => {
+    setIsFullscreen(false)
+  }, [])
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {
         prevImage()
       } else if (event.key === "ArrowRight") {
         nextImage()
+      } else if (event.key === "Escape") {
+        closeFullscreen()
       }
     }
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [nextImage, prevImage])
+  }, [nextImage, prevImage, closeFullscreen])
 
   return (
     <section id="gallery" className="bg-gray-100 py-20">
@@ -46,12 +56,13 @@ export default function ImageGallery() {
               exit={{ opacity: 0, x: -300 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="relative h-full w-full"
+              onClick={openFullscreen}
             >
               <Image
                 src={galleryImages[currentIndex].src}
                 alt={galleryImages[currentIndex].alt}
                 fill
-                className="object-cover"
+                className="object-cover cursor-pointer"
                 onError={(e) => {
                   console.error(`Failed to load image: ${galleryImages[currentIndex].src}`)
                   e.currentTarget.src = "/placeholder.svg"
@@ -94,8 +105,33 @@ export default function ImageGallery() {
             </div>
           </div>
         </div>
+
+        {/* Fullscreen View */}
+        {isFullscreen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="relative w-full max-w-5xl h-[80vh]"
+            >
+              <Image
+                src={galleryImages[currentIndex].src}
+                alt={galleryImages[currentIndex].alt}
+                fill
+                className="object-contain"
+              />
+              <button
+                onClick={closeFullscreen}
+                className="absolute top-4 right-4 rounded-full bg-black/50 p-3 text-white transition-colors hover:bg-black/75"
+                aria-label="Close fullscreen"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </motion.div>
+          </div>
+        )}
       </div>
     </section>
   )
 }
-
